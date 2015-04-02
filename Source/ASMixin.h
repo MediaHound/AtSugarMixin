@@ -1,6 +1,6 @@
 //
 //  ASMixin.h
-//  AtSugar
+//  AtSugarMixin
 //
 //  Created by Dustin Bachrach on 11/19/14.
 //
@@ -50,6 +50,35 @@ synthesize_property_list(m ## SynthesizeProperties)
 @synthesize_from_mixin (m1)\
 @synthesize_from_mixin (m2)
 
+
+#define mixin4(name, m1, m2, m3) \
++ (void)initialize\
+{\
+    if (self.class == name.class) {\
+        [self mixinFrom:m1.class];\
+        [self mixinFrom:m2.class];\
+        [self mixinFrom:m3.class];\
+    }\
+}\
+@synthesize_from_mixin (m1)\
+@synthesize_from_mixin (m2)\
+@synthesize_from_mixin (m3)
+
+
+#define mixin5(name, m1, m2, m3, m4) \
++ (void)initialize\
+{\
+    if (self.class == name.class) {\
+        [self mixinFrom:m1.class];\
+        [self mixinFrom:m2.class];\
+        [self mixinFrom:m3.class];\
+        [self mixinFrom:m4.class];\
+    }\
+}\
+@synthesize_from_mixin (m1)\
+@synthesize_from_mixin (m2)\
+@synthesize_from_mixin (m3)\
+@synthesize_from_mixin (m4)
 
 #define mixin(...) class __AS_MIXIN__3__UNUSED__;\
 macro_dispatcher(mixin, __VA_ARGS__)(__VA_ARGS__)
