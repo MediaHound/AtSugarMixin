@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "AtSugarMixin"
-  s.version          = "0.0.1"
+  s.version          = "0.1.0"
   s.summary          = "Sugar for your @ -- mixin style"
   s.homepage         = ""
   s.license          = 'Apache'
-  s.author           = { "Dustin Bachrach" => "ahdustin@gmail.com" }
+  s.author           = { "Dustin Bachrach" => "dustin@mediahound.com" }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
